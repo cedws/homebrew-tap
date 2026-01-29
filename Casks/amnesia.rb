@@ -2,9 +2,10 @@
 cask "amnesia" do
   binary "amnesia", target: "age-plugin-amnesia"
 
+  name "amnesia"
   desc ""
   homepage ""
-  version "0.1.0"
+  version "0.2.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,23 +15,23 @@ cask "amnesia" do
 
   on_macos do
     on_intel do
-      url "https://github.com/cedws/amnesia/releases/download/v0.1.0/amnesia_0.1.0_darwin_amd64.tar.gz"
-      sha256 "ddbabec3e8d50278b8f84610f96ec5c3b2b601b9da0714f0b715c97b77a2f5bf"
+      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_darwin_amd64.tar.gz"
+      sha256 "96c77bfaf94441130e11ac832be5e9bc22438c02ca37225c2dda39d42e56a998"
     end
     on_arm do
-      url "https://github.com/cedws/amnesia/releases/download/v0.1.0/amnesia_0.1.0_darwin_arm64.tar.gz"
-      sha256 "dcb71bcb350fd5d83926392a29363c1e54d4671570c12b9086999efeaf90d609"
+      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_darwin_arm64.tar.gz"
+      sha256 "7bbdc4b40800ddffad4b270216e95bc29749b0a23bd7490daeec1a54a605ade9"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/cedws/amnesia/releases/download/v0.1.0/amnesia_0.1.0_linux_amd64.tar.gz"
-      sha256 "3cc83210225608d8d1fcf114d5de14dd8a2f5c5cbabeb8d630755f39fb93138b"
+      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_linux_amd64.tar.gz"
+      sha256 "9068aaa78e5667f0758d14b3b8f919100dcf59bdf93e13c6f3df4233de7c695f"
     end
     on_arm do
-      url "https://github.com/cedws/amnesia/releases/download/v0.1.0/amnesia_0.1.0_linux_arm64.tar.gz"
-      sha256 "ccc929ffa28b3db5704b160b723d15c01b9370f3c5797f10a0915dd7a861b9ab"
+      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_linux_arm64.tar.gz"
+      sha256 "828dcdbcd5b42ca527ccd52def05f51509743694ff360de4afb3d91eefaa13c7"
     end
   end
 
