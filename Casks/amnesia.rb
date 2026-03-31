@@ -3,8 +3,8 @@ cask "amnesia" do
   binary "amnesia", target: "age-plugin-amnesia"
 
   name "amnesia"
-  desc ""
-  homepage ""
+  desc "a command-line tool for sealing secrets with a set of questions, with a specified number of answers required to decrypt the secret"
+  homepage "https://github.com/cedws/amnesia/"
   version "0.2.0"
 
   livecheck do
