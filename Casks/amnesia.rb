@@ -2,10 +2,33 @@
 cask "amnesia" do
   binary "amnesia", target: "age-plugin-amnesia"
 
+  version "0.2.1"
+
+  on_macos do
+    on_intel do
+      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_darwin_amd64.tar.gz"
+      sha256 "22931fd484093545144ac20b31e21e79cd2ee64af6c26d8bce55d65da08fc539"
+    end
+    on_arm do
+      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_darwin_arm64.tar.gz"
+      sha256 "691b09e540bb7812e6aff7123f5cb3b98cb68ad1d756f5da632e1c3de38b38db"
+    end
+  end
+
+  on_linux do
+    on_intel do
+      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_linux_amd64.tar.gz"
+      sha256 "676e3e9a5c493cfe3898a3c6ded6971350ab091c8627a5c56761e955961566c7"
+    end
+    on_arm do
+      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_linux_arm64.tar.gz"
+      sha256 "6b920fc01fb0bc87f3d57c71aada64449220d504d38e82186481497d168d7000"
+    end
+  end
+
   name "amnesia"
-  desc ""
-  homepage ""
-  version "0.2.0"
+  desc "a command-line tool for sealing secrets with a set of questions, with a specified number of answers required to decrypt the secret"
+  homepage "https://github.com/cedws/amnesia"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,33 +36,12 @@ cask "amnesia" do
 
   binary "amnesia"
 
-  on_macos do
-    on_intel do
-      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_darwin_amd64.tar.gz"
-      sha256 "96c77bfaf94441130e11ac832be5e9bc22438c02ca37225c2dda39d42e56a998"
-    end
-    on_arm do
-      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_darwin_arm64.tar.gz"
-      sha256 "7bbdc4b40800ddffad4b270216e95bc29749b0a23bd7490daeec1a54a605ade9"
-    end
-  end
-
-  on_linux do
-    on_intel do
-      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_linux_amd64.tar.gz"
-      sha256 "9068aaa78e5667f0758d14b3b8f919100dcf59bdf93e13c6f3df4233de7c695f"
-    end
-    on_arm do
-      url "https://github.com/cedws/amnesia/releases/download/v#{version}/amnesia_#{version}_linux_arm64.tar.gz"
-      sha256 "828dcdbcd5b42ca527ccd52def05f51509743694ff360de4afb3d91eefaa13c7"
-    end
-  end
-
   postflight do
-    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+    if OS.mac?
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/amnesia"]
     end
   end
 
   # No zap stanza required
+
 end
