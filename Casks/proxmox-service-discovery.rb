@@ -5,22 +5,22 @@ cask "proxmox-service-discovery" do
   on_macos do
     on_intel do
       url "https://github.com/cedws/proxmox-service-discovery/releases/download/v#{version}/proxmox-service-discovery_#{version}_darwin_amd64.tar.gz"
-      sha256 "cfe07ec0b7f692985ccfee41ca27d4ea4a3d689eaa0245fc186c1c648092e149"
+      sha256 "f6c7ff5c02f5df6b3ded0184ea78bee8c2c691ccc8755b7c5bd7d267dd5150e7"
     end
     on_arm do
       url "https://github.com/cedws/proxmox-service-discovery/releases/download/v#{version}/proxmox-service-discovery_#{version}_darwin_arm64.tar.gz"
-      sha256 "23b10c6aa052f75355fff7b4fb53b7da35878e8e59ff37f28591ec4552443938"
+      sha256 "039ec5ac1762aeb1ad1498ea48218b7c0d0db292e79cae1fa89cf4c2ca7fb76b"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/cedws/proxmox-service-discovery/releases/download/v#{version}/proxmox-service-discovery_#{version}_linux_amd64.tar.gz"
-      sha256 "7dc0efbcc7ac77f02c6c848f696254e415f519cc8b9438fdce64030f641d7fed"
+      sha256 "77d24f55b8a9a8d4e158b7ce58ba4f7a4618a21efb616d8bd0486601664a020a"
     end
     on_arm do
       url "https://github.com/cedws/proxmox-service-discovery/releases/download/v#{version}/proxmox-service-discovery_#{version}_linux_arm64.tar.gz"
-      sha256 "926b2dea34f280c6bf70f7e7742578146adb9b3df0abc4016349da0ab284ec05"
+      sha256 "04db2dc390f352a4027f49b84254ba9a8614ebfc602691a49d6a47b21530eb6b"
     end
   end
 
